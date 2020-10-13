@@ -1,0 +1,29 @@
+﻿<Graph ClassName="DummyAttributeGraph" Source="#CDATA" IsNew="True" FileType="NewGraph">
+    <CDATA name="Source"><![CDATA[using System;
+using System.Collections;
+using System.Collections.Generic;
+using PX.SM;
+using PX.Data;
+using PX.Commerce.BigCommerce;
+using PX.Commerce.Core;
+
+namespace DummyAttribute
+{
+  public class DummyAttributeGraph : PXGraphExtension<BCTemplateItemProcessor>
+  {
+    [PXOverride]
+    public  List<string> GetDummyAttributes()
+    {
+      List<string> attributes = new List<string>();
+      BCDummyAttributeExt bCDummyBindingExt =  Base.GetBindingExt<BCDummyAttributeExt>();
+      if(!string.IsNullOrEmpty(bCDummyBindingExt.DummyAttribute))
+      {
+        var dummies = bCDummyBindingExt.DummyAttribute.Split(new char[] { ','});
+        if (dummies != null)
+          attributes.AddRange(dummies);
+      }
+      return attributes;
+    }
+  }
+}]]></CDATA>
+</Graph>

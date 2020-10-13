@@ -1,0 +1,21 @@
+﻿<Graph ClassName="BCDummyAttributeExt" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using PX.Commerce.Core;
+using PX.Data;
+using PX.Objects;
+using System;
+
+
+namespace DummyAttribute
+{
+
+    public class BCDummyAttributeExt : PXCacheExtension<BCBinding>
+  {
+        #region DummyAttribute
+        [PXDBString]
+        [PXUIField(DisplayName="Dummy Attribute")]
+        public virtual string DummyAttribute { get; set; }
+        public abstract class dummyAttribute : PX.Data.BQL.BqlString.Field<dummyAttribute> { }
+        #endregion
+  }
+}]]></CDATA>
+</Graph>
