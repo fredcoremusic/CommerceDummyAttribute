@@ -1,16 +1,18 @@
-﻿<Graph ClassName="DummyAttributeGraph" Source="#CDATA" IsNew="True" FileType="NewGraph">
+﻿<Graph ClassName="SPDummyAttributeGraph" Source="#CDATA" IsNew="True" FileType="NewGraph">
     <CDATA name="Source"><![CDATA[using System;
 using System.Collections;
 using System.Collections.Generic;
 using PX.SM;
 using PX.Data;
-using PX.Commerce.BigCommerce;
+using PX.Commerce.Shopify;
 using PX.Commerce.Objects;
 
-namespace DummyAttribute
+namespace DummyAttribute1
 {
-  public class DummyAttributeGraph : PXGraphExtension<BCTemplateItemProcessor>
+  public class SPDummyAttributeGraph : PXGraphExtension<SPTemplateItemProcessor>
   {
+    #region Event Handlers
+   
     [PXOverride]
     public  List<string> GetDummyAttributes()
     {
@@ -24,6 +26,8 @@ namespace DummyAttribute
       }
       return attributes;
     }
+ 
+    #endregion
   }
 }]]></CDATA>
 </Graph>
